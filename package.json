@@ -4,7 +4,8 @@
   "description": "Brandon Baird Portfolio",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"npx babel src --out-dir . --presets react-app/prod"
   },
   "repository": {
     "type": "git",
@@ -21,9 +22,6 @@
     "babel-preset-react-app": "^3.1.2"
   },
   "babel": {
-    "plugins":[
-       "transform-es2015-modules-amd"
-    ]
   },
   "devDependencies": {
     "babel-plugin-transform-es2015-modules-amd": "^6.24.1"
