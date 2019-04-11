@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Binvention/Binvention.github.io/issues"
   },
-  "homepage": "https://github.com/Binvention/Binvention.github.io#readme"
+  "homepage": "https://github.com/Binvention/Binvention.github.io#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2"
+  }
 }
