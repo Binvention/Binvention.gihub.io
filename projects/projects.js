@@ -1,1 +1,5 @@
-console.log("hello world");
+define([], function () {
+  "use strict";
+
+  console.log("hello world");
+});
