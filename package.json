@@ -1,0 +1,27 @@
+{
+  "name": "binvention.github.io",
+  "version": "1.0.0",
+  "description": "Brandon Baird Portfolio",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"babel src -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Binvention/Binvention.github.io.git"
+  },
+  "author": "Brandon Baird",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Binvention/Binvention.github.io/issues"
+  },
+  "homepage": "https://github.com/Binvention/Binvention.github.io#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0"
+  },
+  "dependencies": {}
+}
