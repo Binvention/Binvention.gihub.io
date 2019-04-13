@@ -1,5 +1,6 @@
-import React from "react"
-import Clock from "./projects/clock.js"
+import React from "react";
+import ReactDOM from "react-dom";
+import Clock from "./projects/clock.js";
 export default class App extends React.Component{
    constructor(props){
       super(props);
