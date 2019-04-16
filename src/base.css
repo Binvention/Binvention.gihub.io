@@ -1,0 +1,17 @@
+.Menu .root {
+   flex-grow: 1;
+ }
+
+.Menu .grow {
+   flex-grow: 1;
+ }
+
+.Menu .menuButton {
+   margin-left : -12;
+   margin-right : 20;
+ }
+
+body {
+   background-color:#506149b7;
+
+}

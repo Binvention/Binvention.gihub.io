@@ -10,15 +10,12 @@ class Clock extends React.Component {
    componentDidMount(){
       this.canvas.current.height = this.height;
       this.canvas.current.width = this.width;
-      console.log(this);
       var ctx = this.canvas.current.getContext("2d");
       var radius = this.height / 2;
-      //ctx.setTransform(2,0,0,1,0,0)
       ctx.translate(radius, radius);
-      var fill="black";//$element.css('color');
+      var fill="black";
       ctx.fillStyle=fill;
       ctx.strokeStyle=fill;
-      console.log(ctx,radius);
       setInterval(drawClock, 1000,ctx,radius);
 
       function drawClock(ctx,radius) {
