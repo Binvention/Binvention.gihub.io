@@ -46,7 +46,7 @@ class Base extends React.Component{
          <Menu/>
          <div >
             <Clock radius={50}></Clock>
-            <img src="../static/logo.svg"/>
+            <img src="./static/logo.svg"/>
          </div>
       </div>);
    }
