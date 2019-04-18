@@ -1,10 +1,5 @@
 import React from "react";
 import {hot} from "react-hot-loader";
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import Clock from "./projects/clock";
 import "./base.css";
 
@@ -16,22 +11,24 @@ import "./base.css";
       render(){
          var menu;
          if(window.innerWidth < 760){
-            menu =(<div className="mMenu"><IconButton className="menuButton" color="inherit" aria-label="Menu">
-                  <MenuIcon />
-               </IconButton></div>)
+            menu =(<div className="mMenu">
+            <img className="icon" src="./static/logo.svg"/>
+            <Clock radius={20}></Clock>
+            <h1>Brandon Baird</h1>
+            </div>)
          } else {
-            menu = (<div className="dMenu"><Button>Hello</Button><Button>World</Button></div>)
+            menu = (<div className="dMenu">
+            <img className="icon" src="./static/logo.svg"/>
+            <Clock radius={20}></Clock>
+            <h1>Brandon Baird</h1>
+            <div className="menuButtons">
+
+            </div>
+            </div>)
          }
-      return (
-         <div className="Menu">
-            <AppBar position="static">
-               <Toolbar>
-                  <h4>Brandon Baird</h4>
-                  {menu}
-               </Toolbar>
-            </AppBar>
-         </div>
-      );
+      return (<div className="Menu">
+            {menu}
+         </div>);
    }
 }
 
@@ -44,9 +41,7 @@ class Base extends React.Component{
    render(){
       return (<div>
          <Menu/>
-         <div >
-            <Clock radius={50}></Clock>
-            <img src="./static/logo.svg"/>
+         <div className="mainPage">
          </div>
       </div>);
    }
