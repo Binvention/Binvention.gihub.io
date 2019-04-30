@@ -6,10 +6,9 @@ class Sudoku extends React.Component {
       super(props);
       this.canvas = React.createRef();
       this.fileInput = React.createRef();
-      console.log(this);
       this.active;
       this.state = {
-         editable : this.props.editable || false,
+         editable : this.props.editable || false
       };
       this.id = props.id || 0;
       this.height = Number(this.props.height) || 540;
@@ -34,6 +33,16 @@ class Sudoku extends React.Component {
       ctx.clearRect(0,0,540,540);
    }
    display(ctx){
+      if(this.props.solve){
+         var solution = this.board.solve().solution;
+         for (var i = 0; i < this.board.length; i++){
+            for(var j=0;j<this.board[i].length; j++){
+               if(this.board[i][j].editable){
+                  this.board[i][j].value = solution[i][j];
+               }
+            }
+         }
+      }
       ctx = ctx || this.ctx;
       this.clearCanvas(ctx);
       this.drawSelected(ctx);
@@ -111,10 +120,6 @@ class Sudoku extends React.Component {
          }
       }
    }
-   showPossibleValues(){
-      this.showPossibles = !this.showPossibles; 
-      this.display(this.ctx);
-   }
    select(event){
       var bounding = this.canvas.current.getBoundingClientRect();
       var x = (event.clientX - bounding.x)/this.scalex;
@@ -125,7 +130,6 @@ class Sudoku extends React.Component {
          this.active=(this.board[row][columb]);
          this.display(this.ctx);
       } else if(this.props.select){
-         console.log("Board " + this.dbindex + " selected");
          this.props.select(this.dbindex);
       }
    }
@@ -167,7 +171,8 @@ class Sudoku extends React.Component {
          }}>
             <div style={{
                display:"inherit",
-               float:"left"
+               float:"left",
+               backgroundColor:"#ffffff"
             }}>
                <canvas ref={this.canvas} style={{
                   height:this.height,
@@ -374,7 +379,6 @@ class Board extends Array {
                };
             }
          }
-         console.log("we have a problem in our guess");
       }
       function modifyGuess(){
          var undone = 0;
