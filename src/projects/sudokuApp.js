@@ -311,7 +311,7 @@ export default class SudokuApp extends React.Component{
                   editable:true,
                   showPossibles:this.state.showPossible,
                   solve:this.state.solve,
-                  key:this.state.active + this.state.showPossible,
+                  key:this.state.active + this.state.showPossible + this.state.solve,
                   board:this.state.list[index].props.board,
                   boardupdate:this.saveBoard.bind(this)
                });

@@ -20,15 +20,21 @@ module.exports = {
    },
    resolve: { extensions: ["*", ".js", ".jsx"] },
    output: {
-      path: path.resolve(__dirname, "dev/"),
-      publicPath: "/dev/",
-      filename: "bundle.js"
+      path: path.resolve(__dirname, "dev"),
+      publicPath: "dev/",
+      filename: "[name].bundle.js",
+      chunkFilename: "[name].bundle.js"
    },
    devServer: {
-      contentBase: path.join(__dirname, "public/"),
+      contentBase: path.resolve(__dirname, "dev"),
       port: 3000,
       publicPath: "http://localhost:3000",
       hotOnly: true
    },
-   plugins: [new webpack.HotModuleReplacementPlugin()]
+   plugins: [new webpack.HotModuleReplacementPlugin()],
+   optimization: {
+      splitChunks: {
+        chunks: 'all',
+      },
+    },
 };

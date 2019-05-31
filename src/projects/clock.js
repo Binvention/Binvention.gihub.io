@@ -13,7 +13,7 @@ class Clock extends React.Component {
       var ctx = this.canvas.current.getContext("2d");
       var radius = this.height / 2;
       ctx.translate(radius, radius);
-      var fill="black";
+      var fill="white";
       ctx.fillStyle=fill;
       ctx.strokeStyle=fill;
       setInterval(drawClock, 1000,ctx,radius);
